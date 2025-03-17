@@ -5,7 +5,11 @@ import com.example.application.bornout.model.Docente;
 import com.example.application.bornout.repository.CursoRepository;
 import com.example.application.bornout.service.ICursoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class CursoService implements ICursoService {
     @Autowired
     private CursoRepository cursoRepository;
@@ -15,8 +19,8 @@ public class CursoService implements ICursoService {
     }
 
     @Override
-    public Iterable<Curso> findAllCurso() {
-        return cursoRepository.findAll();
+    public Iterable<Curso> findAllCurso(long id) {
+        return cursoRepository.findByDocenteId(id);
     }
 
     @Override

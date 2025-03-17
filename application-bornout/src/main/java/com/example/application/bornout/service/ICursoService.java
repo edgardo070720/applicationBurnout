@@ -5,7 +5,7 @@ import com.example.application.bornout.model.Docente;
 
 public interface ICursoService {
     void seveCurso(Curso curso);
-    Iterable<Curso> findAllCurso();
+    Iterable<Curso> findAllCurso(long id);
     void  updateCurso(Curso curso);
 
     void deleteCurso(long id);

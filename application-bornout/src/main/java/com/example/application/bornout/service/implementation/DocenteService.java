@@ -4,7 +4,9 @@ import com.example.application.bornout.model.Docente;
 import com.example.application.bornout.repository.DocenteRepository;
 import com.example.application.bornout.service.IDocenteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DocenteService implements IDocenteService {
     @Autowired
     private DocenteRepository docenteRepository;
