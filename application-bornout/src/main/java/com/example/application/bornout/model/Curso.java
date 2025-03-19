@@ -2,17 +2,14 @@ package com.example.application.bornout.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Setter
 @Getter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Builder
 @Table(name = "curso")
 public class Curso {
     @Id
@@ -22,7 +19,6 @@ public class Curso {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "docente_id")
-    @JsonIgnore
     private Docente docente;
 
 }

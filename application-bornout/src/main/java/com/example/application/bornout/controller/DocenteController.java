@@ -1,6 +1,7 @@
 package com.example.application.bornout.controller;
 
 
+import com.example.application.bornout.DTOs.DocenteDTO;
 import com.example.application.bornout.model.Docente;
 import com.example.application.bornout.service.implementation.DocenteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class DocenteController {
     private DocenteService docenteService;
 
     @PostMapping("/seve")
-    public ResponseEntity<String> seveDocente(@RequestBody Docente docente){
+    public ResponseEntity<String> seveDocente(@RequestBody DocenteDTO docente){
         try {
             docenteService.seveDocente(docente);
             return new ResponseEntity<>("Se guardo el docete con exito",HttpStatus.OK);
@@ -26,14 +27,14 @@ public class DocenteController {
     @GetMapping("/findAll")
     public ResponseEntity<?> findAllDocente(){
         try {
-            Iterable<Docente> docentes= docenteService.findAllDocente();
+            Iterable<DocenteDTO> docentes= docenteService.findAllDocente();
             return new ResponseEntity<>(docentes,HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
     @PutMapping("/update")
-    public  ResponseEntity<?> updateDocente(@RequestBody Docente docente){
+    public  ResponseEntity<?> updateDocente(@RequestBody DocenteDTO docente){
         try {
             docenteService.updateDocente(docente);
             return new ResponseEntity<>("se actualizo con exito",HttpStatus.OK);

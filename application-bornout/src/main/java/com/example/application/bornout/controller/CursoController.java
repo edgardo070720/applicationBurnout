@@ -1,5 +1,6 @@
 package com.example.application.bornout.controller;
 
+import com.example.application.bornout.DTOs.CursoDTO;
 import com.example.application.bornout.model.Curso;
 import com.example.application.bornout.service.implementation.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class CursoController {
     @Autowired
     private CursoService cursoService;
     @PostMapping("/seve")
-    public ResponseEntity<?> seveCuso(@RequestBody Curso curso){
+    public ResponseEntity<?> seveCuso(@RequestBody CursoDTO curso){
         try {
             cursoService.seveCurso(curso);
             return new ResponseEntity<>("se guardo su curso con exito", HttpStatus.OK);
@@ -26,14 +27,14 @@ public class CursoController {
     @GetMapping("/findAllById/{id}")
     public ResponseEntity<?> findAllByIdCurso(@PathVariable long id){
         try {
-            Iterable<Curso> cursos= cursoService.findAllCurso(id);
+            Iterable<CursoDTO> cursos= cursoService.findAllCurso(id);
             return new ResponseEntity<>(cursos,HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
         }
     }
     @PutMapping("/update")
-    public ResponseEntity<?> updateCurso(@RequestBody Curso curso){
+    public ResponseEntity<?> updateCurso(@RequestBody CursoDTO curso){
         try {
             cursoService.updateCurso(curso);
             return new ResponseEntity<>("se acrualizo con exito el curso",HttpStatus.OK);
