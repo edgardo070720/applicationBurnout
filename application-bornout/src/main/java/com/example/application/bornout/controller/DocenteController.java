@@ -2,7 +2,7 @@ package com.example.application.bornout.controller;
 
 
 import com.example.application.bornout.DTOs.DocenteDTO;
-import com.example.application.bornout.model.Docente;
+
 import com.example.application.bornout.service.implementation.DocenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

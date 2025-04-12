@@ -1,6 +1,6 @@
 package com.example.application.bornout.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.*;
 

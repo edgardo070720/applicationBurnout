@@ -2,7 +2,7 @@ package com.example.application.bornout.service.implementation;
 
 import com.example.application.bornout.DTOs.CursoDTO;
 import com.example.application.bornout.DTOs.DocenteDTO;
-import com.example.application.bornout.model.Curso;
+
 import com.example.application.bornout.model.Docente;
 import com.example.application.bornout.repository.DocenteRepository;
 import com.example.application.bornout.service.IDocenteService;

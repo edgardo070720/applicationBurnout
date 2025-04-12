@@ -1,14 +1,13 @@
 package com.example.application.bornout.controller;
 
 import com.example.application.bornout.DTOs.CursoDTO;
-import com.example.application.bornout.model.Curso;
+
 import com.example.application.bornout.service.implementation.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/curso")
